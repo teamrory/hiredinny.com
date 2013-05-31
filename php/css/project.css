@@ -1,0 +1,79 @@
+/* ========================================================= Main ===*/
+/* ========================================================= Menu ===*/
+#menu{
+  background-color: #412612;
+  display: block;
+  float: left;
+  height: 100%;
+  width: 165px;
+}
+#menu h3{
+  background-color:#29180c;
+  border-bottom: 1px solid #603f24;
+  color:#fff;
+  font-size:12px;
+  margin:0;
+  padding:4px 0 4px 10px;
+  text-shadow: 0px -1px 1px #333;
+}
+#menu ul{
+  margin: 0;
+  padding: 0;
+  width: inherit;
+}
+#menu ul li {
+  list-style-type: none;
+  margin: 0;
+}
+#menu ul li.active {
+  background-color: #6e411f;
+}
+#menu ul li a:link, #menu ul li a:visited {
+  border-bottom: 1px solid #2c190b;
+  box-shadow: 0 1px 0 #4f3422;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-family: arial;
+  text-decoration: none;
+  padding: 10px 0px 10px 10px;
+  text-shadow: 0px 1px 1px #000000;
+  width: 165px;
+}
+#menu ul li a:hover, #menu ul li a:active {
+  background-color: #6e411f;
+}
+#menu i{
+  color: #fcffda;
+  line-height: 0.8;
+}
+/* ========================================================= Header ===*/
+.ui-bar-a{ /* Header Bar */
+  background: #af1e26;
+  border: none;
+  border-bottom:2px solid #6e1319;
+  color:#000;
+  text-shadow: 0px 1px 1px #fff;
+  height:42px;
+}
+.ui-header .ui-title{ /* Title */
+  color: #fcffda;
+  margin: 0;
+  padding: 14px 0 10px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.7);
+}
+.ui-header .ui-btn-inner {
+  padding: 0.55em 11px 0.4em;
+}
+.ui-header .ui-btn-left{
+  background: #ac1d24;
+  top: 4px;
+}
+.ui-btn-corner-all {
+  border-radius: 2px;
+}
+/* ========================================================= Page ===*/
+.ui-mobile .ui-page{
+  background: #f9fdd7;
+  box-shadow: -2px 0px 3px rgba(0, 0, 0, 0.5);
+}
