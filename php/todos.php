@@ -1,11 +1,9 @@
 <?php 
 session_start();
-//if (isset($_SESSION['username']))
-  //header('Location: welcome.php');
+if (!isset($_SESSION['username']))
+  header('Location: welcome.php');
 include 'header.php';
 include 'menu.php';
-
-$_SESSION['username'] = "URKYAfN_xL";
 
 $jobid = $_REQUEST['jobid'];
 $compname = $_REQUEST['compname'];
