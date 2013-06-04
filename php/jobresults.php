@@ -3,9 +3,17 @@ session_start();
 if (!isset($_SESSION['username']))
   header('Location: welcome.php');
 include 'header.php';
-include 'menu.php';
 
 $title = $_REQUEST['title'];
+
+
+if (isset($_REQUEST['jobid']))
+{
+	file_get_contents("http://hiredinny.com/private/insert/job?id=".$_SESSION['username']."&jobid=".$_REQUEST['jobid']."&compid=".$_REQUEST['compid'], true);
+}
+
+include 'menu.php';
+
 
 $url = file_get_contents("http://hiredinny.com/private/myjobs/".$_SESSION['username'], true);
 $obj = json_decode($url);
@@ -15,10 +23,6 @@ for ($i = 0; $i < sizeof($obj); $i++) {
     array_push($myjobs, $obj[$i]->JobID);
   }
 
-if (isset($_REQUEST['jobid']))
-{
-	file_get_contents("http://hiredinny.com/private/insert/job?id=".$_SESSION['username']."&jobid=".$_REQUEST['jobid']."&compid=".$_REQUEST['compid'], true);
-}
 
 $url = file_get_contents("http://hiredinny.com/ws/jobs/title/search/".$title, true);
 $obj = json_decode($url);
