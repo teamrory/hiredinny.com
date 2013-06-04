@@ -28,7 +28,7 @@ $dataj = "";
 for ($i = 0; $i < sizeof($obj); $i++)
 	if(!in_array($obj[$i]->JobID, $myjobs))
 		{	 
-  	$dataj.="<li>".$obj[$i]->CompanyName." - ".$obj[$i]->Title." - <a href ='http://hiny.com/jobresults.php?jobid=".$obj[$i]->JobID."&compid=".$obj[$i]->CompanyID."&title=".$title."' data-ajax='false'>Select Job</a></li>"; 
+  	$dataj.="<li>".$obj[$i]->CompanyName." - ".$obj[$i]->Title." - <a href ='http://hiny.co/jobresults.php?jobid=".$obj[$i]->JobID."&compid=".$obj[$i]->CompanyID."&title=".$title."' data-ajax='false'>Select Job</a></li>"; 
   	}
 ?>
 <div data-role="page">
