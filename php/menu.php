@@ -1,11 +1,11 @@
 <?php
-$url = file_get_contents("http://hiredinny.com/private/myjobs/".$_SESSION['username'], true);
-$obj = json_decode($url);
+$urlm = file_get_contents("http://hiredinny.com/private/myjobs/".$_SESSION['username'], true);
+$objm = json_decode($urlm);
 
 $data = "";
 
-for ($i = 0; $i < sizeof($obj); $i++) {
-      $data.="<li><a href ='todos.php?jobid=".$obj[$i]->JobID."&compname=".$obj[$i]->CompanyName."&title=".$obj[$i]->Title."'>".$obj[$i]->CompanyName." - ".$obj[$i]->Title."</a></li>";         
+for ($i = 0; $i < sizeof($objm); $i++) {
+      $data.="<li><a href ='todos.php?jobid=".$objm[$i]->JobID."&compname=".$objm[$i]->CompanyName."&title=".$objm[$i]->Title."'>".$objm[$i]->CompanyName." - ".$objm[$i]->Title."</a></li>";         
   	
   }
 ?>
