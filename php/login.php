@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if (isset($_SESSION['username'])
+if (isset($_SESSION['username']))
   header('Location: welcome.php');
 include 'header.php';
 include 'menu.php';
@@ -15,7 +15,7 @@ include 'menu.php';
 
   <div data-role="content">
     <h2>Hired<span>in</span>NY</h2>
-    <a href="http://hirediny.com/linkedin" class="btn"><i class="ss-icon ss-social">&#xF612;</i> Connect Linkedin Account</a>
+    <a href="http://hiredinny.com/linkedin" class="btn"><i class="ss-icon ss-social">&#xF612;</i> Connect Linkedin Account</a>
   </div><!--/content-->
 
 </div><!--/page-->
