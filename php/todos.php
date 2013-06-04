@@ -1,9 +1,11 @@
 <?php 
 session_start();
-if (isset($_SESSION['username']))
-  header('Location: welcome.php');
+//if (isset($_SESSION['username']))
+  //header('Location: welcome.php');
 include 'header.php';
 include 'menu.php';
+
+$_SESSION['username'] = "URKYAfN_xL";
 
 $jobid = $_REQUEST['jobid'];
 $compname = $_REQUEST['compname'];
@@ -16,15 +18,15 @@ if (isset($_REQUEST['complete']))
 $url = file_get_contents("http://hiredinny.com/private/mytodos/".$_SESSION['username'], true);
 $obj = json_decode($url);
 
-$data = "";
+$datat = "";
 
 for ($i = 0; $i < sizeof($obj); $i++)
 	if($obj[$i]->jobid == $jobid)
 		{
 		$temp = "";
-    	if ($obj[$i]->link != ""){
+    	if ($obj[$i]->link != "")
     		$temp = " - <a href='".$obj[$i]->link."'>Link</a>";
-      	$data.="<li>".$obj[$i]->section." - ".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."'>Complete</a></li>"; 
+      	$datat.="<li>".$obj[$i]->section." - ".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."'>Complete</a></li>"; 
   		}
 ?>
 <div data-role="page">
@@ -37,7 +39,7 @@ for ($i = 0; $i < sizeof($obj); $i++)
   <div data-role="content">
   	<h4>Todos for <?php echo $compname; ?> - <?php echo $title; ?></h4>
       <ul>
-      	<?php echo $data; ?>
+      	<?php echo $datat; ?>
       </ul>
   </div><!--/content-->
 

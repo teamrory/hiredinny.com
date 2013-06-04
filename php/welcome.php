@@ -20,7 +20,10 @@ include 'menu.php';
 
   <div data-role="content">
     <h4>Welcome, <?php echo $fname?>!</h4>
-      
+    <br> <form name="input" action="jobresults.php" method="get">
+	Job Title Search: <input type="text" name="title">
+	<input type="submit" value="Submit">
+	</form> 
   </div><!--/content-->
 
 </div><!--/page-->

@@ -4,9 +4,10 @@ $obj = json_decode($url);
 
 $data = "";
 
-for ($i = 0; $i < sizeof($obj); $i++)
+for ($i = 0; $i < sizeof($obj); $i++) {
       $data.="<li><a href ='todos.php?jobid=".$obj[$i]->JobID."&compname=".$obj[$i]->CompanyName."&title=".$obj[$i]->Title."'>".$obj[$i]->CompanyName." - ".$obj[$i]->Title."</a></li>";         
-
+  	
+  }
 ?>
 
 <div id="menu">
