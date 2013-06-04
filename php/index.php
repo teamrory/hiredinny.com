@@ -1,19 +1,21 @@
-<?php include 'header.php'; ?>
-<?php include 'menu.php'; ?>
+<?php 
+session_start();
+if (isset($_SESSION['username'])
+  header('Location: welcome.php');
+include 'header.php';
+include 'menu.php';
+?>
 
 <div data-role="page">
 
   <div data-role="header">
-    <a href="#"class="showMenu"><i class="ss-icon">&#xE9A1;</i></a>
-    <h1>HiNY</h1>
+    <h1>HiredinNY</h1>
   </div><!--/header-->
 
   <div data-role="content">
     <h4>Current Pages</h4>
     <ul>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/registration">Registration</a></li>
-      <li><a href="/archived">Archived</a></li>
+      <li><a href="/login.php">Login</a></li>
     </ul>
 
     <h4>Notes</h4>

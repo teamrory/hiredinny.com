@@ -1,7 +1,12 @@
 <?php 
 session_start();
-if (isset($_SESSION['username'])
-  header('Location: welcome.php');
+if (!isset($_SESSION['username'])
+{
+	$_SESSION['username']=$_REQUEST['username'];
+	$_SESSION['fname']=$_REQUEST['fname'];
+}
+$username = $_SESSION['username'];
+$fname = $_SESSION['fname'];
 include 'header.php';
 include 'menu.php';
 ?>
@@ -10,12 +15,12 @@ include 'menu.php';
 
   <div data-role="header">
     <a href="#"class="showMenu"><i class="ss-icon">&#xE9A1;</i></a>
-    <h1>Login</h1>
+    <h1>HiredinNY</h1>
   </div><!--/header-->
 
   <div data-role="content">
-    <h2>Hired<span>in</span>NY</h2>
-    <a href="http://hirediny.com/linkedin" class="btn"><i class="ss-icon ss-social">&#xF612;</i> Connect Linkedin Account</a>
+    <h4>Welcome, <?php echo $fname?>!</h4>
+      
   </div><!--/content-->
 
 </div><!--/page-->
