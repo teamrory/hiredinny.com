@@ -9,7 +9,6 @@ include 'menu.php';
 <div data-role="page">
 
   <div data-role="header">
-    <a href="#"class="showMenu"><i class="ss-icon">&#xE9A1;</i></a>
     <h1>Login</h1>
   </div><!--/header-->
 
