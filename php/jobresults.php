@@ -1,7 +1,7 @@
 <?php 
 session_start();
-//if (!isset($_SESSION['username']))
-  //header('Location: welcome.php');
+if (!isset($_SESSION['username']))
+  header('Location: welcome.php');
 include 'header.php';
 include 'menu.php';
 
@@ -28,7 +28,7 @@ $dataj = "";
 for ($i = 0; $i < sizeof($obj); $i++)
 	if(!in_array($obj[$i]->JobID, $myjobs))
 		{	 
-  	$dataj.="<li>".$obj[$i]->CompanyName." - ".$obj[$i]->Title." - <a href ='jobresults.php?jobid=".$obj[$i]->JobID."&compid=".$obj[$i]->CompanyID."&title=".$title."'>Select Job</a></li>"; 
+  	$dataj.="<li>".$obj[$i]->CompanyName." - ".$obj[$i]->Title." - <a href ='jobresults.php?jobid=".$obj[$i]->JobID."&compid=".$obj[$i]->CompanyID."&title=".$title."' rel='external'>Select Job</a></li>"; 
   		}
 ?>
 <div data-role="page">

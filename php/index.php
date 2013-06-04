@@ -17,7 +17,7 @@ include 'menu.php';
     <ul>
       <li><a href="/login.php">Login</a></li>
     </ul>
-    <h4>Kennedy's Notes</h4>
+    <h4>Pinzler's Notes</h4>
     <ul>
       <li>I shouldn't do front end stuff and this is why...</li>
       <li>Login through LinkedIn then search for a job title and then select a job or two.</a></li>

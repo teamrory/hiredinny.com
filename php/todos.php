@@ -1,7 +1,7 @@
 <?php 
 session_start();
-//if (!isset($_SESSION['username']))
-  //header('Location: welcome.php');
+if (!isset($_SESSION['username']))
+  header('Location: welcome.php');
 include 'header.php';
 include 'menu.php';
 
@@ -23,8 +23,8 @@ for ($i = 0; $i < sizeof($obj); $i++)
 		{
 		$temp = "";
     	if ($obj[$i]->link != "")
-    		$temp = " - <a href='".$obj[$i]->link."'>Link</a>";
-      	$datat.="<li>".$obj[$i]->section." - ".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."'>Complete</a></li>"; 
+    		$temp = " - <a href='".$obj[$i]->link."' rel='external'>Link</a>";
+      	$datat.="<li>".$obj[$i]->section." - ".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."' rel='external'>Complete</a></li>"; 
   		}
 ?>
 <div data-role="page">
