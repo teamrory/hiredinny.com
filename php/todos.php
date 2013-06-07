@@ -45,7 +45,8 @@ for ($i = 0; $i < sizeof($obj); $i++)
   <div id="main">
 
 <div id="profile">
-Name
+  <h3>Todos for <?php echo $compname; ?></h3>
+  <h4><?php echo $title; ?></h4>
 </div><!--/profile-->
 
 <ul class="nav nav-tabs">
@@ -54,21 +55,19 @@ Name
   <li><a href="#apply" data-toggle="tab">Apply</a></li>
 </ul>
 
-<h4>Todos for <?php echo $compname; ?> - <?php echo $title; ?></h4>
-
 <div class="tab-content">
   <div class="tab-pane active" id="prep">
-    <ul>
+    <ul class="list">
       <?php echo $dataprep; ?>
     </ul>
   </div><!--/prep-->
   <div class="tab-pane" id="meet">
-    <ul>
+    <ul class="list">
       <?php echo $datameet; ?>
     </ul>
   </div><!--/meet-->
   <div class="tab-pane" id="apply">
-    <ul>
+    <ul class="list">
       <?php echo $dataapply; ?>
     </ul>
   </div><!--/apply-->
