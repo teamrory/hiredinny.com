@@ -16,7 +16,7 @@ $userimg = $obj[0]->pictureUrl;
 
 <nav>
       <ul>
-        <li><h3><img src="<?php echo $userimg; ?>"> Name<?php echo $_SESSION['fname'];?></h3></li>
+        <li><h3><img src="<?php echo $userimg; ?>"> <?php echo $_SESSION['fname'];?></h3></li>
         <li><strong>Your Jobs</strong></li>
         <?php echo $data; ?>
       </ul>

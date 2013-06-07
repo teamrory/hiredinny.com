@@ -91,7 +91,8 @@ nav h3{
   margin:0;
 }
 nav h3 img{
-
+  width: 30px;
+  height: 30px;
 }
 nav strong{
   background-color: #70421f;
