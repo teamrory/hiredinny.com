@@ -43,13 +43,12 @@ for ($i = 0; $i < sizeof($obj); $i++)
   </header>
 
   <div id="main">
-    <div class="container">
 
    <h4>Job Results for "<?php echo $title; ?>"</h4>
-       <ul>
+       <ul class="list">
         <?php echo $dataj; ?>
       </ul>
-    </div><!--/container-->
+
   </div><!--/main-->
 
 
