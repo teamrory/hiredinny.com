@@ -16,7 +16,9 @@ if (isset($_REQUEST['complete']))
 $url = file_get_contents("http://hiredinny.com/private/mytodos/".$_SESSION['username'], true);
 $obj = json_decode($url);
 
-$datat = "";
+$dataprep = "";
+$datameet = "";
+$dataapply = "";
 
 for ($i = 0; $i < sizeof($obj); $i++)
 	if($obj[$i]->jobid == $jobid)
@@ -24,7 +26,12 @@ for ($i = 0; $i < sizeof($obj); $i++)
 		$temp = "";
     	if ($obj[$i]->link != "")
     		$temp = " - <a href='".$obj[$i]->link."' rel='external'>Link</a>";
-      	$datat.="<li>".$obj[$i]->section." - ".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."' rel='external'>Complete</a></li>";
+         if ($obj[$i]->section = "Prep")
+      	   $dataprep.="<li>".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."#prep' rel='external'>Complete</a></li>";
+         if ($obj[$i]->section = "Meet")
+           $datameet.="<li>".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."'#meet rel='external'>Complete</a></li>";
+         if ($obj[$i]->section = "Apply")
+           $dataapply.="<li>".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."#apply' rel='external'>Complete</a></li>";
   		}
 ?>
 
@@ -53,19 +60,19 @@ Name
   <div class="tab-pane active" id="prep">
     <ul>
       <li>Only pull in <strong>Prep</strong></li>
-      <?php echo $datat; ?>
+      <?php echo $dataprep; ?>
     </ul>
   </div><!--/prep-->
   <div class="tab-pane" id="meet">
     <ul>
       <li>Only pull in <strong>Meet</strong></li>
-      <?php echo $datat; ?>
+      <?php echo $datameet; ?>
     </ul>
   </div><!--/meet-->
   <div class="tab-pane" id="apply">
     <ul>
       <li>Only pull in <strong>Apply</strong></li>
-      <?php echo $datat; ?>
+      <?php echo $dataapply; ?>
     </ul>
   </div><!--/apply-->
 </div><!--/tab-content-->
