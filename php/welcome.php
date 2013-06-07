@@ -22,12 +22,13 @@ include 'menu.php';
   </header>
 
   <div id="main">
-
+<center>
     <h4>Welcome, <?php echo $fname?>!</h4>
     <form class="form-search" name="input" action="jobresults.php" method="get">
       <input type="text" class="  search-query" name="title" placeholder="Job Title Search">
       <button type="submit" class="btn">Search</button>
     </form>
+  </center>
 
   </div><!--/main-->
 

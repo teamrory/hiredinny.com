@@ -9,6 +9,38 @@ $jobid = $_REQUEST['jobid'];
 $compname = $_REQUEST['compname'];
 $title = $_REQUEST['title'];
 
+    $meet1='';
+    $meet2='';
+    $apply1='';
+    $apply2='';
+    $prep1='';
+    $prep2='';
+  
+if (isset($_REQUEST['tab']))
+  {
+  if ($_REQUEST['tab'] == "meet")
+  {
+    $meet1=' class="active"';
+    $meet2=' active';
+  }
+  if ($_REQUEST['tab'] == "apply")
+  {
+    $apply1=' class="active"';
+    $apply2=' active';
+  }
+  else
+  {
+    $prep1=' class="active"';
+    $prep2=' active';
+  }
+}
+else
+  {
+    $prep1=' class="active"';
+    $prep2=' active';
+  }
+
+
 if (isset($_REQUEST['complete']))
 	file_get_contents("http://hiredinny.com/private/updatetodos/".$_REQUEST['complete'], true);
 
@@ -27,11 +59,11 @@ for ($i = 0; $i < sizeof($obj); $i++)
     	if ($obj[$i]->link != "")
     		$temp = " - <a href='".$obj[$i]->link."' rel='external'>Link</a>";
          if ($obj[$i]->section == "Prep")
-      	   $dataprep.="<li>".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."#prep' rel='external'>Complete</a></li>";
+      	   $dataprep.="<li>".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."&tab=prep' rel='external' class='btn'>Complete</a></li>";
          if ($obj[$i]->section == "Meet")
-           $datameet.="<li>".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."'#meet' rel='external'>Complete</a></li>";
+           $datameet.="<li>".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."&tab=meet' rel='external' class='btn'>Complete</a></li>";
          if ($obj[$i]->section == "Apply")
-           $dataapply.="<li>".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."#apply' rel='external'>Complete</a></li>";
+           $dataapply.="<li>".$obj[$i]->text.$temp." - <a href ='todos.php?jobid=".$jobid."&compname=".$compname."&title=".$title."&complete=".$obj[$i]->id."&tab=apply' rel='external' class='btn'>Complete</a></li>";
   		}
 ?>
 
@@ -50,23 +82,23 @@ for ($i = 0; $i < sizeof($obj); $i++)
 </div><!--/profile-->
 
 <ul class="nav nav-tabs">
-  <li><a href="#prep" data-toggle="tab">Prep</a></li>
-  <li><a href="#meet" data-toggle="tab">Meet</a></li>
-  <li><a href="#apply" data-toggle="tab">Apply</a></li>
+  <li<?php echo $prep1; ?>><a href="#prep" data-toggle="tab">Prep</a></li>
+  <li<?php echo $meet1; ?>><a href="#meet" data-toggle="tab">Meet</a></li>
+  <li<?php echo $apply1; ?>><a href="#apply" data-toggle="tab">Apply</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane" id="prep">
+  <div class="tab-pane<?php echo $prep2; ?>" id="prep">
     <ul class="list">
       <?php echo $dataprep; ?>
     </ul>
   </div><!--/prep-->
-  <div class="tab-pane" id="meet">
+  <div class="tab-pane<?php echo $meet2; ?>" id="meet">
     <ul class="list">
       <?php echo $datameet; ?>
     </ul>
   </div><!--/meet-->
-  <div class="tab-pane" id="apply">
+  <div class="tab-pane<?php echo $apply2; ?>" id="apply">
     <ul class="list">
       <?php echo $dataapply; ?>
     </ul>
