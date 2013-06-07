@@ -44,7 +44,7 @@ include 'menu.php';
   </header>
 
   <div id="main">
-<center> <form class="form-search" name="input" action="jobresults.php" method="get">
+<center> <P><form class="form-search" name="input" action="jobresults.php" method="get">
       <input type="text" class="  search-query" name="title" placeholder="Job Title Search">
       <button type="submit" class="btn">Search</button>
     </form>
