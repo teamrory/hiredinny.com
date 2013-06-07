@@ -17,7 +17,6 @@ include 'menu.php';
   </header>
 
   <div id="main">
-    <div class="container">
 
     <h4>Welcome, <?php echo $fname?>!</h4>
     <form class="form-search" name="input" action="jobresults.php" method="get">
@@ -25,7 +24,6 @@ include 'menu.php';
       <button type="submit" class="btn">Search</button>
     </form>
 
-    </div><!--/container-->
   </div><!--/main-->
 
 <?php include("footer.php"); ?>
