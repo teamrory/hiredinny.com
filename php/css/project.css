@@ -183,31 +183,43 @@ input:-moz-placeholder{
 --------- */
 .nav-tabs{
   background-color: #af212b;
+  border-top: 1px solid #611117;
   border-bottom: 1px solid #611117;
+  box-shadow: 0 -1px 3px rgba(0,0,0,0.4);
   text-align: center;
 }
 .nav-tabs > li{
-  border-right: 1px solid #78161c;
+
   float: none;
   display: inline-block;
   margin-bottom: 0;
 }
-.nav-tabs a{
+.nav-tabs > li:first-child > a{
+  border-left: 1px solid #78161c;
+}
+.nav-tabs > li > a{
+  border:none;
+  border-right: 1px solid #78161c;
+  border-radius: 0;
   color: #fcffdb;
-  margin-bottom: 0;
+  font-size: 18px;
+  margin: 0 -4px 0 0;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
   background-color: #cd4144;
   border: none;
-
+  border-right: 1px solid #78161c;
   border-radius: 0;
   color: #fcffdb;
 }
 .nav > li > a:hover, .nav > li > a:focus {
     background-color: #cd4144;
     border:none;
+    border-right: 1px solid #78161c;
     border-radius: 0;
-    margin:0;
+    margin: 0 -4px 0 0;
     text-decoration: none;
 }
 /* ========================================================= Job Results ===*/
