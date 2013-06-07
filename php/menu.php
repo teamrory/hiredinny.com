@@ -12,11 +12,12 @@ for ($i = 0; $i < sizeof($objm); $i++) {
 $url = file_get_contents("http://hiredinny.com/private/getProfile/".$_SESSION['username'], true);
 $obj = json_decode($url);
 $userimg = $obj[0]->pictureUrl;
+$lname = $obj[0]->lastName;
 ?>
 
 <nav>
       <ul>
-        <li><h3><img src="<?php echo $userimg; ?>"> <?php echo $_SESSION['fname'];?></h3></li>
+        <li><h3><img src="<?php echo $userimg; ?>"> <?php echo $_SESSION['fname'];?> <?php echo $lname; ?></h3></li>
         <li><strong>Your Jobs</strong></li>
         <?php echo $data; ?>
         <li><a href="welcome.php" rel='external'>Search for Jobs</a></li>

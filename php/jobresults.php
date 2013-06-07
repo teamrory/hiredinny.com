@@ -32,7 +32,7 @@ $dataj = "";
 for ($i = 0; $i < sizeof($obj); $i++)
 	if(!in_array($obj[$i]->JobID, $myjobs))
 		{
-  	$dataj.="<li>".$obj[$i]->CompanyName." - ".$obj[$i]->Title." - <a href ='jobresults.php?title=".$title."&jobid=".$obj[$i]->JobID."&compid=".$obj[$i]->CompanyID."' rel='external'>Select Job</a></li>";
+  	$dataj.="<li>".$obj[$i]->CompanyName." - ".$obj[$i]->Title." - <a href ='jobresults.php?title=".$title."&jobid=".$obj[$i]->JobID."&compid=".$obj[$i]->CompanyID."' rel='external' class='btn'>Select Job</a></li>";
   	}
 include 'menu.php';
 ?>
@@ -44,8 +44,12 @@ include 'menu.php';
   </header>
 
   <div id="main">
-
-   <h4>Job Results for "<?php echo $title; ?>"</h4>
+<center> <form class="form-search" name="input" action="jobresults.php" method="get">
+      <input type="text" class="  search-query" name="title" placeholder="Job Title Search">
+      <button type="submit" class="btn">Search</button>
+    </form>
+    <P>
+   <h4>Job Results for "<?php echo $title; ?>"</h4> </center>
        <ul class="list">
         <?php echo $dataj; ?>
       </ul>

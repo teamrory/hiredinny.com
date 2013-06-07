@@ -23,7 +23,7 @@ if (isset($_REQUEST['tab']))
     $meet1=' class="active"';
     $meet2=' active';
   }
-  if ($_REQUEST['tab'] == "apply")
+  elseif ($_REQUEST['tab'] == "apply")
   {
     $apply1=' class="active"';
     $apply2=' active';
