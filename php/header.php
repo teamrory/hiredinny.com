@@ -13,9 +13,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap.css">
   <link rel="stylesheet" href="/css/ss-social.css">
   <link rel="stylesheet" href="/css/ss-standard.css">
   <link rel="stylesheet" href="/css/project.css">
+  <script src="js/modernizr.min.js"></script>
 </head>
 <body>
+<div id="mobile">

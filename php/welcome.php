@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (!isset($_SESSION['username']))
 {
@@ -11,21 +11,22 @@ include 'header.php';
 include 'menu.php';
 ?>
 
-<div data-role="page">
+  <header>
+    <div id="menu-button"><a href="" id="menu-btn"><i class="ss-icon">&#xE9A1;</i></a></div>
+    <h1><a href="/">HiredinNY</a></h1>
+  </header>
 
-  <div data-role="header">
-    <a href="#"class="showMenu"><i class="ss-icon">&#xE9A1;</i></a>
-    <h1>HiredinNY</h1>
-  </div><!--/header-->
+  <div id="main">
+    <div class="container">
 
-  <div data-role="content">
     <h4>Welcome, <?php echo $fname?>!</h4>
     <br> <form name="input" action="jobresults.php" method="get">
-	Job Title Search: <input type="text" name="title">
-	<input type="submit" value="Submit">
-	</form> 
-  </div><!--/content-->
+  Job Title Search: <input type="text" name="title">
+  <input type="submit" value="Submit">
+  </form>
 
-</div><!--/page-->
+    </div><!--/container-->
+  </div><!--/main-->
+
 
 <?php include("footer.php"); ?>

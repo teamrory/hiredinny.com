@@ -1,5 +1,230 @@
-/* ========================================================= Main ===*/
-/* ========================================================= Menu ===*/
+*{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* ========================================================= Mobile ===*/
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* ========================================================= Structure ===*/
+#mobile{
+  overflow: hidden;
+  height: 100%;
+}
+#page{
+  background-color: #f9fcd9;
+  margin: 0;
+  box-shadow: -1px 0 3px rgba(0,0,0,0.5);
+  position: relative;
+  left: 0;
+  height: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  z-index: 99999;
+}
+/* ========================================================= Header ===*/
+header{
+  background-color: #af1e26;
+  border-bottom: 1px solid #70141a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  margin: 0;
+  padding: 0 10px;
+}
+header h1{
+  display: block;
+  font-size: 25px;
+  font-weight: 300;
+  margin: 0;
+  padding: 2px 0 4px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+}
+header h1 a, header h1 a:hover, header h1 a:focus{
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+}
+header #menu-button{
+  position: relative;
+}
+header #menu-button a {
+  background-color: #db2733;
+  border: 1px solid #70141a;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 6px 16px 1px;
+  left: 0px;
+  position: absolute;
+  top: 6px;
+}
+header #menu-button a, header #menu-button a:hover{
+  color: #fcffdb;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.7);
+}
+/* ========================================================= Menu Nav ===*/
+nav{
+  background: #412612;
+  height: 100%;
+  display: block;
+  position: fixed;
+  overflow-y: scroll;
+  width: 270px;
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+}
+nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li{
+  border-bottom: 1px solid #2c190d;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.1);
+  margin: 0;
+  padding: 0;
+}
+nav strong{
+  background-color: #70421f;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(112, 66, 31)), to(rgb(84, 50, 24)));
+  background-image: -webkit-linear-gradient(top, rgb(112, 66, 31), rgb(84, 50, 24));
+  background-image: -moz-linear-gradient(top, rgb(112, 66, 31), rgb(84, 50, 24));
+  background-image: -o-linear-gradient(top, rgb(112, 66, 31), rgb(84, 50, 24));
+  background-image: -ms-linear-gradient(top, rgb(112, 66, 31), rgb(84, 50, 24));
+  background-image: linear-gradient(top, rgb(112, 66, 31), rgb(84, 50, 24));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#70421f', EndColorStr='#543218');
+  color: #eee;
+  display: block;
+  font-size: 13px;
+  padding: 3px 10px;
+  text-transform: uppercase;
+}
+nav a{
+  color: #fff;
+  font-size: 15px;
+  display: block;
+  padding: 7px 10px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+nav a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+/* ---------
+-- Search --
+--------- */
+#search-form {
+  margin-bottom: 0;
+  padding: 7px;
+}
+#search-form .search-wrap{
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px solid rgba(255,255,255,0.3);
+    padding: 0 34px 0 0;
+}
+#search-form .search-input{
+    border: 1px solid #000;
+    border-radius: 3px 0 0 3px;
+    position: relative;
+    width: 100%; height: 32px;
+}
+#search-form input[type="search"] {
+    -webkit-appearance:none;
+    border: 1px solid white;
+    border-radius: 3px 0 0 3px;
+    box-shadow: none;
+    height: 12px;
+    left: 0;
+    line-height: 12px;
+    margin: 0;
+    padding: 8px 0 8px 8px;
+    position: relative;
+    width: 100%;
+    z-index: 15;
+}
+#search-form input[type="submit"] {
+    -webkit-appearance:none;
+    background-color: #fff;
+    color: #b9b9b9;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    border-radius: 0 3px 3px 0;
+    padding: 8px 0 7px;
+    position: absolute;
+    top: -1px; right: -35px;
+    width: 34px; height: 32px;
+    z-index: 10;
+}
+input::-webkit-input-placeholder{
+    color: #b9b9b9 !important;
+    font-style: italic;
+}
+input:-moz-placeholder{
+    color: #b9b9b9 !important;
+    font-style: italic;
+}
+/* ========================================================= Login ===*/
+
+/* ========================================================= Welcome ===*/
+
+/* ========================================================= Todo ===*/
+#profile{
+  background-color: #3e2311;
+  color: #fff;
+}
+/* ---------
+-- Tabs --
+--------- */
+.nav-tabs{
+  background-color: #af212b;
+  border-bottom: 1px solid #611117;
+  text-align: center;
+}
+.nav-tabs > li{
+  border-right: 1px solid #78161c;
+  float: none;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.nav-tabs a{
+  color: #fcffdb;
+  margin-bottom: 0;
+}
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+  background-color: #cd4144;
+  border: none;
+
+  border-radius: 0;
+  color: #fcffdb;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #cd4144;
+    border:none;
+    border-radius: 0;
+    margin:0;
+    text-decoration: none;
+}
+/* ========================================================= Job Results ===*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #menu{
   background-color: #412612;
   display: block;

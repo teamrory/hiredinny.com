@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (!isset($_SESSION['username']))
   header('Location: welcome.php');
@@ -31,24 +31,26 @@ $dataj = "";
 
 for ($i = 0; $i < sizeof($obj); $i++)
 	if(!in_array($obj[$i]->JobID, $myjobs))
-		{	 
-  	$dataj.="<li>".$obj[$i]->CompanyName." - ".$obj[$i]->Title." - <a href ='jobresults.php?title=".$title."&jobid=".$obj[$i]->JobID."&compid=".$obj[$i]->CompanyID."' rel='external'>Select Job</a></li>"; 
+		{
+  	$dataj.="<li>".$obj[$i]->CompanyName." - ".$obj[$i]->Title." - <a href ='jobresults.php?title=".$title."&jobid=".$obj[$i]->JobID."&compid=".$obj[$i]->CompanyID."' rel='external'>Select Job</a></li>";
   	}
 ?>
-<div data-role="page">
 
-  <div data-role="header">
-    <a href="#"class="showMenu"><i class="ss-icon">&#xE9A1;</i></a>
-    <h1>HiredinNY</h1>
-  </div><!--/header-->
 
-  <div data-role="content">
-  	<h4>Job Results for "<?php echo $title; ?>"</h4>
+  <header>
+    <div id="menu-button"><a href="" id="menu-btn"><i class="ss-icon">&#xE9A1;</i></a></div>
+    <h1><a href="/">HiredinNY</a></h1>
+  </header>
+
+  <div id="main">
+    <div class="container">
+
+   <h4>Job Results for "<?php echo $title; ?>"</h4>
        <ul>
-      	<?php echo $dataj; ?>
+        <?php echo $dataj; ?>
       </ul>
-  </div><!--/content-->
+    </div><!--/container-->
+  </div><!--/main-->
 
-</div><!--/page-->
 
 <?php include("footer.php"); ?>

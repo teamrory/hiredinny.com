@@ -2,48 +2,71 @@
 
   "use strict";
 
-}());
-$(function(){
-  var menuStatus;
+var pagebody = $("#page");
+  var themenu = $("nav");
+  var topbar  = $("header");
+  var content = $("#main");
+  var viewport = {
+      width  : $(window).width(),
+      height : $(window).height()
+  };
+  // retrieve variables as
+  // viewport.width / viewport.height
 
-  $("a.showMenu").click(function(){
-    if(menuStatus != true){
-    $(".ui-page-active").animate({
-      marginLeft: "165px",
-      }, 300, function(){menuStatus = true});
-      return false;
-      } else {
-      $(".ui-page-active").animate({
-      marginLeft: "0px",
-      }, 300, function(){menuStatus = false});
-      return false;
-      }
-  });
+  function openme() {
+    $(function () {
+        topbar.animate({
+           left: "255px"
+        }, { duration: 300, queue: false });
+        pagebody.animate({
+           left: "255px"
+        }, { duration: 300, queue: false });
+    });
+  }
 
-  $('.pages').on("swipeleft", function(){
-    if (menuStatus){
-    $(".ui-page-active").animate({
-      marginLeft: "0px",
-      }, 300, function(){menuStatus = false});
-      }
-  });
+  function closeme() {
+    var closeme = $(function() {
+        topbar.animate({
+              left: "0px"
+        }, { duration: 180, queue: false });
+        pagebody.animate({
+              left: "0px"
+        }, { duration: 180, queue: false });
+    });
+  }
 
-  $('.pages').on("swiperight", function(){
-    if (!menuStatus){
-    $(".ui-page-active").animate({
-      marginLeft: "165px",
-      }, 300, function(){menuStatus = true});
-      }
-  });
+  // checking whether to open or close nav menu
+  $("#menu-btn").on("click", function(e){
+    e.preventDefault();
+    var leftval = pagebody.css('left');
 
-  $("#menu li a").click(function(){
-    var p = $(this).parent();
-    if($(p).hasClass('active')){
-      $("#menu li").removeClass('active');
-    } else {
-      $("#menu li").removeClass('active');
-      $(p).addClass('active');
+    if(leftval == "0px") {
+      openme();
+    }
+    else {
+      closeme();
     }
   });
 
-});
+  // loading page content for navigation
+  $("a.navlink").on("click", function(e){
+    e.preventDefault();
+    var linkurl     = $(this).attr("href");
+    var linkhtmlurl = linkurl.substring(1, linkurl.length);
+
+    var imgloader   = '<center style="margin-top: 30px;"><img src="img/preloader.gif" alt="loading..." /></center>';
+
+    closeme();
+
+    $(function() {
+      topbar.css("top", "0px");
+      window.scrollTo(0, 1);
+    });
+
+    content.html(imgloader);
+
+    setTimeout(function() { content.load(linkhtmlurl, function() { /* no callback */ }) }, 1200);
+  });
+
+
+}());

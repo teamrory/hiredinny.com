@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (isset($_SESSION['username']))
   header('Location: welcome.php');
@@ -6,13 +6,14 @@ include 'header.php';
 include 'menu.php';
 ?>
 
-<div data-role="page">
+  <header>
+    <div id="menu-button"><a href="" id="menu-btn"><i class="ss-icon">&#xE9A1;</i></a></div>
+    <h1><a href="/">HiredinNY</a></h1>
+  </header>
 
-  <div data-role="header">
-    <h1>HiredinNY</h1>
-  </div><!--/header-->
+  <div id="main">
+    <div class="container">
 
-  <div data-role="content">
     <h4>Current Pages</h4>
     <ul>
       <li><a href="/login.php">Login</a></li>
@@ -33,8 +34,8 @@ include 'menu.php';
       <li>I am using <a href="http://symbolicons.com/">Symbol Icons</a> for...well the icons.</li>
       <li>Each page had 2 includes; header.php, footer.php, and menu.php. These items contain the shit that gets repeated.</li>
     </ul>
-  </div><!--/content-->
 
-</div><!--/page-->
+    </div><!--/container-->
+  </div><!--/main-->
 
 <?php include("footer.php"); ?>
