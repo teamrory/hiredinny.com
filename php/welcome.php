@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['username']))
 {
-  if (!isset($_SESSION['username']))
+  if (!isset($_REQUEST['username']))
     header('Location: index.php');
   else 
     { 

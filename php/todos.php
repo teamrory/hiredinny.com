@@ -50,13 +50,13 @@ for ($i = 0; $i < sizeof($obj); $i++)
 </div><!--/profile-->
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#prep" data-toggle="tab">Prep</a></li>
+  <li><a href="#prep" data-toggle="tab">Prep</a></li>
   <li><a href="#meet" data-toggle="tab">Meet</a></li>
   <li><a href="#apply" data-toggle="tab">Apply</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="prep">
+  <div class="tab-pane" id="prep">
     <ul class="list">
       <?php echo $dataprep; ?>
     </ul>
