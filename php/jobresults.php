@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['username']))
-  header('Location: welcome.php');
+  header('Location: index.php');
 include 'header.php';
 
 $title = $_REQUEST['title'];
@@ -12,7 +12,7 @@ if (isset($_REQUEST['jobid']))
 	file_get_contents("http://hiredinny.com/private/insert/job?id=".$_SESSION['username']."&jobid=".$_REQUEST['jobid']."&compid=".$_REQUEST['compid'], true);
 }
 
-include 'menu.php';
+
 
 
 $url = file_get_contents("http://hiredinny.com/private/myjobs/".$_SESSION['username'], true);
@@ -34,6 +34,7 @@ for ($i = 0; $i < sizeof($obj); $i++)
 		{
   	$dataj.="<li>".$obj[$i]->CompanyName." - ".$obj[$i]->Title." - <a href ='jobresults.php?title=".$title."&jobid=".$obj[$i]->JobID."&compid=".$obj[$i]->CompanyID."' rel='external'>Select Job</a></li>";
   	}
+include 'menu.php';
 ?>
 
 

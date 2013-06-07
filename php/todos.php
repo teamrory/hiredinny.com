@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['username']))
-  header('Location: welcome.php');
+  header('Location: index.php');
 include 'header.php';
 include 'menu.php';
 

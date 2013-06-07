@@ -2,8 +2,13 @@
 session_start();
 if (!isset($_SESSION['username']))
 {
+  if (!isset($_SESSION['username']))
+    header('Location: index.php');
+  else 
+    { 
 	$_SESSION['username']=$_REQUEST['username'];
 	$_SESSION['fname']=$_REQUEST['fname'];
+    }
 }
 $username = $_SESSION['username'];
 $fname = $_SESSION['fname'];
