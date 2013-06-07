@@ -13,7 +13,12 @@ include 'header.php';
     <div class="container">
 <P><P>
 
-    <center><a href="http://hiredinny.com/linkedin" class="btn"><i class="ss-icon ss-social">&#xF612;</i> Login with Linkedin</a></center>
+    <center><a href="http://hiredinny.com/linkedin" class="btn"><i class="ss-icon ss-social">&#xF612;</i> Login with Linkedin</a>
+
+<BR><BR>
+    	<img src="logo.png" width="222" height="222">
+
+    	</center>
 
     </div><!--/container-->
   </div><!--/main-->

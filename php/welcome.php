@@ -28,6 +28,8 @@ include 'menu.php';
       <input type="text" class="  search-query" name="title" placeholder="Job Title Search">
       <button type="submit" class="btn">Search</button>
     </form>
+    <BR><BR>
+      <img src="logo.png" width="222" height="222">
   </center>
 
   </div><!--/main-->
